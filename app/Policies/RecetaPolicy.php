@@ -30,7 +30,8 @@ class RecetaPolicy
      */
     public function view(User $user, Receta $receta)
     {
-        return $user->id === $perfil->user_id;
+        return $user->id === $receta->user_id;
+
          
     }
 
