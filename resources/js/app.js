@@ -9,7 +9,7 @@ require('./bootstrap');
 window.Vue = require('vue').default;
 //* importaiones de sweetAler2
 //import VueSweetalert2 from 'vue-sweetalert2';
-//import 'sweetalert2/dist/sweetalert2.min.css';
+import 'sweetalert2/dist/sweetalert2.min.css';
 
 //* importaciones axios
 window.axios = require('axios');//Si no agregas puede surgir error 404(No envia a los controllers)
