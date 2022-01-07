@@ -1,16 +1,19 @@
-/* body{
+body{
     font-family: $parrafos-font-family;
-} */
+}
 trix-editor{
     min-height: 400px;
     height: auto!important;
 }
 
-.bg-primary .navbar-brand{
+.bg-navbar{
+    background-color: #eb6864 ;
+}
+.bg-navbar .navbar-brand{
 
     color: white;
     font-family: $font-family-sans-serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
 
     &:hover {
 

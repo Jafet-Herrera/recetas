@@ -12,7 +12,7 @@ A continuación se describe la serie de pasos a realizar para sobre las libreria
   $ composer require laravel/ui
  
  1.1 CREANDO IMPLANTANDO EL PAQUETE DE AUTENTIFICACIÓN
-    $ php artisan  ui auth
+    $ php artisan  ui:auth
  
  1.2 Anexando bootstrap
   $ php artisan  ui bootstrap
