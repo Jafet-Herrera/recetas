@@ -6,6 +6,8 @@ use App\Models\Perfil;
 use App\Models\Receta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
+
 
 class PerfilController extends Controller
 {
@@ -115,9 +117,9 @@ class PerfilController extends Controller
            //! Integrando intervation image al proyecto
            //Redimencionar imagen //* composer require intervention/image   || http://image-v1.intervention.io/
            
-           /*  $image= Image::make( public_path("storage/{$imagen_ruta}"))->fit(600, 600) ;
-            $image->save(); */
-            
+            $image= Image::make( public_path("storage/{$imagen_ruta}"))->fit(600, 600) ;
+            $image->save();
+           
 
             //creando arreglo para inyectar en la bd
             $array_image= ['imagen'=>$imagen_ruta];

@@ -56,7 +56,10 @@
     
 
     <article>
-        <like-button>fsdfs</like-button>
+        fsdf
+        <like-button></like-button>
+        
+
     </article>
 
 @endsection
