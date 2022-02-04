@@ -56,8 +56,10 @@
     
 
     <article>
-        fsdf
-        <like-button></like-button>
+        {{-- <form method="POST"> --}}
+            {{-- @method('put') --}}
+            <like-btn receta-id="{{$receta->id}}"></like-btn>
+        {{-- </form> --}}
         
 
     </article>

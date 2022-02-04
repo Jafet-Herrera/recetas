@@ -1,8 +1,8 @@
 .like-btn {
-    display: inline-block;
-    Cursor: pointer;
-    width: 80px;
-    height: 80px;
+  display: inline-block;
+  Cursor: pointer;
+  width: 80px;
+  height: 80px;
   }
   
   .like-btn {
@@ -14,9 +14,9 @@
   
   .like-active {
     animation-name: animate;
-    animation-duration: .8s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+  animation-duration: .8s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
   }
   .like-active {
     animation-timing-function: steps(28);

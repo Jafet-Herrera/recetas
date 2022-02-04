@@ -22,4 +22,8 @@ class Receta extends Model
     public function autor(){
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function likes(){
+        return $this->belongdTOMany(User::class, 'likes_receta');
+    }
 }

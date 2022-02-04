@@ -13,7 +13,7 @@ window.Vue = require('vue').default;
 // import 'sweetalert2/dist/sweetalert2.min.css';
 
 //* importaciones axios
-//window.axios = require('axios');//Si no agregas puede surgir error 404(No envia a los controllers)
+window.axios = require('axios');//Si no agregas puede surgir error 404(No envia a los controllers)
 
 
 /**
@@ -42,7 +42,7 @@ window.Vue = require('vue').default;
 // Vue.component('eliminar-receta', require('./components/eliminar_receta.vue').default);
 
 //* Btn animado del like(match) a una receta
-Vue.component('like-button', require('./components/like-btn.vue').default);
+Vue.component('like-btn', require('./components/like-btn.vue').default);
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
@@ -55,3 +55,13 @@ Vue.component('like-button', require('./components/like-btn.vue').default);
 const app = new Vue({
     el: '#app',
 });
+
+/* jQuery
+$('.like-btn').on('click', function() {
+   $(this).toggleClass('like-active');
+});
+
+$('.clap-btn').on('click', function() {
+   $(this).toggleClass('clap-active');
+}); */
+

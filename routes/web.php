@@ -52,4 +52,7 @@ Route::get('/perfiles/{perfil}/edit', 'PerfilController@edit')->name('perfil.edi
 
 Route::put('/perfiles/{perfil}', 'PerfilController@update')->name('perfil.update');
 
+//almacena los likes de la recetas
+Route::post('/recetas/{receta}', 'LikesController@update')->name('likes.update');
+
 
