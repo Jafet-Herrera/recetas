@@ -53,13 +53,19 @@
        
 
     </article>
-    
+   
 
     <article>
-        {{-- <form method="POST"> --}}
-            {{-- @method('put') --}}
-            <like-btn receta-id="{{$receta->id}}"></like-btn>
-        {{-- </form> --}}
+       <div class="justify-content-center row text-center">
+
+           <like-btn 
+               receta-id="{{$receta->id}}"
+               like="{{$like}}"
+               likes="{{$likes}}"
+           ></like-btn>
+
+       </div>
+        
         
 
     </article>

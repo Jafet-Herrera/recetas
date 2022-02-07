@@ -24,6 +24,6 @@ class Receta extends Model
     }
 
     public function likes(){
-        return $this->belongdTOMany(User::class, 'likes_receta');
+        return $this->belongsToMany(User::class, 'likes_receta');
     }
 }

@@ -49,7 +49,7 @@
                         <td>{{ $receta->titulo }}</td>
                         <td>{{ $receta->categoria->nombre}}</td>
                         <td>
-                          {{--   <form action=" {{ route( 'recetas.destroy', ['receta'=>$receta->id] ) }} " method="POST">
+                         {{--   <form action=" {{ route( 'recetas.destroy', ['receta'=>$receta->id] ) }} " method="POST">
                                 @method('delete')
                                 @csrf --}}
                                 <eliminar-receta
@@ -77,6 +77,25 @@
             {{$recetas->links()}}
         </div>
         {{-- @Fin-Paginacion --}}
+        {{-- @Inicio-RecetasConLike --}}
+        <h2 class="text-center my-5">Recetas que te gustan</h2>
+        <div class="col-md-10 mx-auto bg-white p-3">
+        @if(count($usuario->meGusta) > 0)
+        <ul class="list-group">
+            @foreach($usuario->meGusta as $recetasLike)
+                <il class="list-group-item d-flex justify-content-between align-items-center">
+                    <p>{{$recetasLike->titulo}}</p>
+
+                    <a class="btn btn-outline-success" href="{{ route('recetas.show',['receta'=>$recetasLike->id]) }}">Ver</a>
+                </il>
+            @endforeach
+        </ul>
+        @else
+        <p>No tienes recetas</p>
+        @endif
+        </div>
+        {{-- @Fin-RecetasConLike --}}
+
 
     </div>
 

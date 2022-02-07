@@ -56,12 +56,6 @@ const app = new Vue({
     el: '#app',
 });
 
-/* jQuery
-$('.like-btn').on('click', function() {
+/* $('.like-btn').on('click', function() {
    $(this).toggleClass('like-active');
-});
-
-$('.clap-btn').on('click', function() {
-   $(this).toggleClass('clap-active');
 }); */
-

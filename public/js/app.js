@@ -5266,20 +5266,58 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['recetaId'],
+  props: ['recetaId', 'like', 'likes'],
+  //  mounted(){
+  //     console.log(this.like);
+  //  },
+
+  /* data: function (){
+     return {
+        totalLikes: this.likes
+     }
+  }, */
+  data: function data() {
+    return {
+      totalLikes: this.likes,
+      isActive: this.like
+    };
+  },
   methods: {
     likeReceta: function likeReceta() {
+      var _this = this;
+
       //    const params = {
       //     id: this.recetaId
       // }
-      console.log('Diste me gusta', this.recetaId);
+      //console.log('Diste me gusta', this.recetaId);
       axios.post('/recetas/' + this.recetaId) //  axios.post(`/recetas/${this.recetaId}`, {params, _method: 'update'})
       .then(function (respuesta) {
-        console.log(respuesta);
+        //console.log(totalLikes)
+        if (respuesta.data.attached.length > 0) {
+          _this.$data.totalLikes++;
+        } else {
+          _this.$data.totalLikes--;
+        }
+
+        _this.isActive = !_this.isActive;
       })["catch"](function (error) {
         console.log(error);
+
+        if (error.response.status = 401) {
+          window.location = '/register';
+        }
       });
+    }
+  },
+  computed: {
+    cantidadLikes: function cantidadLikes() {
+      return this.
+      /* likes */
+      totalLikes;
     }
   }
 });
@@ -5337,13 +5375,8 @@ Vue.component('like-btn', (__webpack_require__(/*! ./components/like-btn.vue */ 
 var app = new Vue({
   el: '#app'
 });
-/* jQuery
-$('.like-btn').on('click', function() {
+/* $('.like-btn').on('click', function() {
    $(this).toggleClass('like-active');
-});
-
-$('.clap-btn').on('click', function() {
-   $(this).toggleClass('clap-active');
 }); */
 
 /***/ }),
@@ -27918,7 +27951,17 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("span", { staticClass: "like-btn", on: { click: _vm.likeReceta } })
+  return _c("div", [
+    _c("span", {
+      staticClass: "like-btn",
+      class: { "like-active": _vm.isActive },
+      on: { click: _vm.likeReceta },
+    }),
+    _vm._v(" "),
+    _c("p", [
+      _vm._v("A " + _vm._s(_vm.cantidadLikes) + " les gusto esta receta"),
+    ]),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
