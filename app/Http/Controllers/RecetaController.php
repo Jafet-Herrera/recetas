@@ -34,8 +34,8 @@ class RecetaController extends Controller
         $usuario= auth()->user();
 
         $recetas=Receta::where('user_id', $usuario->id)->paginate(10);
+        
         // *Fin de páginacion 
-
         //* obtner las recetas con like
         $recetasWithLike=auth()->user()->meGusta;
         //dd($recetasWithLike);

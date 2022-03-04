@@ -38,6 +38,7 @@
             <thead class="bg-primary text-light">
                 <tr>
                     <th scole="col">Titulo</th>
+                    {{-- <th scole="col-auto">Imagen</th> --}}
                     <th scole="col">Categoria</th>                    
                     <th scole="col">Acciones</th>
                 </tr>
@@ -46,7 +47,10 @@
                 @foreach($recetas as $receta)
                     
                     <tr>
-                        <td>{{ $receta->titulo }}</td>
+                        <td>
+                            {{ $receta->titulo }}
+                        </td>
+                      {{-- <td class="text-center"> <img src="/storage/{{$receta->imagen}}" class="rounded shadow-sm" alt="..." style="width: 50%;"></td>  --}}
                         <td>{{ $receta->categoria->nombre}}</td>
                         <td>
                          {{--   <form action=" {{ route( 'recetas.destroy', ['receta'=>$receta->id] ) }} " method="POST">
@@ -71,7 +75,7 @@
                 @endforeach
             </tbody>
         </table>
-
+        
         {{-- @Inicio-Paginacion --}}
         <div class="col-12 mt-4 justify-content-center d-flex">
             {{$recetas->links()}}
@@ -84,14 +88,22 @@
         <ul class="list-group">
             @foreach($usuario->meGusta as $recetasLike)
                 <il class="list-group-item d-flex justify-content-between align-items-center">
-                    <p>{{$recetasLike->titulo}}</p>
+                    <img src="/storage/{{$recetasLike->imagen}}" class="rounded {{-- rounded-circle --}} shadow-sm {{-- w-50 --}}" alt="..." style="width: 30%; height: 50%;">
+                    <p>
+                        <b>
+                            {{$recetasLike->titulo}}
+
+                        </b>
+                    </p>
+                   
+
 
                     <a class="btn btn-outline-success" href="{{ route('recetas.show',['receta'=>$recetasLike->id]) }}">Ver</a>
                 </il>
             @endforeach
         </ul>
         @else
-        <p>No tienes recetas</p>
+        <p>No tienes recetas guardadas <small><br> &nbsp; Dale me gusta y apareceran aquí...</p>
         @endif
         </div>
         {{-- @Fin-RecetasConLike --}}

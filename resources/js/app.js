@@ -8,12 +8,18 @@ require('./bootstrap');
 
 window.Vue = require('vue').default;
 
+//* incorporar moment
+window.moment= require('moment');
+
 //* importaiones de sweetAler2
-//import VueSweetalert2 from 'vue-sweetalert2';
-// import 'sweetalert2/dist/sweetalert2.min.css';
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
 
 //* importaciones axios
 window.axios = require('axios');//Si no agregas puede surgir error 404(No envia a los controllers)
+//* incorporación owl carousel
+import 'owl.carousel';
+
 
 
 /**
@@ -28,18 +34,18 @@ window.axios = require('axios');//Si no agregas puede surgir error 404(No envia 
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 
-//* llamada a sweetAlert2
-// Vue.use(VueSweetalert2);
+// * llamada a sweetAlert2
+Vue.use(VueSweetalert2);
 
 //* Ignorando elementos de trix-editor para mitigar errores.
-// Vue.config.ignoredElements = ['trix-editor', 'trix-toolbar'];
+Vue.config.ignoredElements = ['trix-editor', 'trix-toolbar'];
 
 //* Anadiendo componente de fecha en apopyo de moment Js
 //TODO: Ver vídeo correspondiente a esta sección e incorporar.
-//Vue.component('fecha-receta', require('./components/FechaReceta.vue').default);
+Vue.component('fecha-receta', require('./components/FechaReceta.vue').default);
 
 //* Componen el cual elimina una receta(Emplea sweetAlet2).
-// Vue.component('eliminar-receta', require('./components/eliminar_receta.vue').default);
+Vue.component('eliminar-receta', require('./components/eliminar_receta.vue').default);
 
 //* Btn animado del like(match) a una receta
 Vue.component('like-btn', require('./components/like-btn.vue').default);
@@ -56,6 +62,7 @@ const app = new Vue({
     el: '#app',
 });
 
-/* $('.like-btn').on('click', function() {
-   $(this).toggleClass('like-active');
-}); */
+/** Carousel con con OWL*/
+jQuery(document).ready(function(){
+    alert('funciona');
+});

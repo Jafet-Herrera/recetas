@@ -52,10 +52,6 @@
                                 });
                         }
                 },
-               computed:{
-                  cantidadLikes: function(){
-                     return  this./* likes */totalLikes;
-                  }
-               }
+               
         }
 </script>

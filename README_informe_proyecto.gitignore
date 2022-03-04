@@ -15,13 +15,17 @@ A continuación se describe la serie de pasos a realizar para sobre las libreria
     $ php artisan  ui:auth
  
  1.2 Anexando bootstrap
-  $ php artisan  ui bootstrap
+  $ npm install bootstrap
+
+  1.2 Anexando bootstrap https://getbootstrap.com/docs/5.1/getting-started/download/
   
-  1.3 Anexando Vue.Js
+  1.3 Anexando popperjs https://popper.js.org/
+    $npm i @popperjs/core
+  Anexando Vue.Js
     $php artisan  ui vue
 
-2.SWEET ALERT2 https://www.npmjs.com/package/sweetalert2
-   npm i sweetalert2
+2.SWEET ALERT2  https://www.npmjs.com/package/vue-sweetalert2 o sin vue: https://www.npmjs.com/package/sweetalert2
+   npm install -S vue-sweetalert2
    
  3.INTERVATION IMAGE  
    $ composer require intervention/image
@@ -50,6 +54,20 @@ A continuación se describe la serie de pasos a realizar para sobre las libreria
   5.2 Añade la libreria al proyecto en resources/js/bootstrap y pega el siguiente código:
         window.Comment = require('moment');
      DE nueva cuenta corre npm run dev o npm run watch
+
+6. OWL carousel o bxSlider
+    OWL carousel https://owlcarousel2.github.io/OwlCarousel2/ : 
+    6.1 instalar en el proyecto la extensión
+    $ npm i owl.carousel
+    6.2 Anexa el cdn unificado(.min) de estilos a la página de interes https://cdnjs.com/libraries/OwlCarousel2
+    6.3 precarga jquery en webpack.mix.js
+      .autoload({
+        jquery: ['$','window.jQuery','jQuery']
+      }) 
+    6.4 Importa owl carousel a /resouces/app.js
+      import 'owl.carousel';
+
+    bxSlider https://bxslider.com/examples/auto-show-start-stop-controls/:
 
 --Soluc{on de errores----
 A continuación se describe la serie errores y la soluciones realiza para dicho momento.
